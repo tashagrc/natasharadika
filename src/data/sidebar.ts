@@ -7,17 +7,17 @@ export const sidebar = {
     {
       title: `About Me`,
       url: ``,
-      icon: LuUser,
+      icon: LuUser
     },
     {
       title: `Projects`,
       url: `projects`,
-      icon: LuWrench,
+      icon: LuWrench
     },
     {
       title: `Articles`,
       url: `articles`,
-      icon: LuNewspaper,
-    },
-  ],
+      icon: LuNewspaper
+    }
+  ]
 };

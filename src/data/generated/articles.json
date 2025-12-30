@@ -1,32 +1,83 @@
 {
-  "manual-setup": {
-    "path": "public/articles/manual-setup/manual-setup.md",
-    "title": "Manual Setup Guide – natasharadika",
-    "created_at": "2025-11-24T14:00:00",
-    "summary": "Step-by-step guide for local development and manual deployment of the natasharadika template.",
-    "draft": false,
-    "tags": ["setup", "manual", "natasharadika"],
-    "updated_at": "2025-11-25T00:56:07.838Z",
-    "hash": "de5e873ee578278474b3b202aa69a7e0d0fd90b145a5c6e2be2a1285cef8aeae"
-  },
-  "quick-setup": {
-    "path": "public/articles/quick-setup/quick-setup.md",
-    "title": "Quick Setup Guide – natasharadika",
-    "created_at": "2025-11-24T14:00:00",
-    "summary": "Step-by-step guide to quickly set up your natasharadika personal website without local development.",
-    "draft": false,
-    "tags": ["setup", "quickstart", "natasharadika"],
-    "updated_at": "2025-11-25T00:56:07.841Z",
-    "hash": "19c0fe9c22c3475769cf8055edc78d9330394a8899011aa6934a2c00c6d678d1"
-  },
-  "template": {
-    "path": "public/articles/template/template.md",
-    "title": "[Your Article Title]",
-    "created_at": "2025-05-20T14:30:00",
-    "summary": "A one-sentence summary of the post for previews or meta description.",
-    "draft": false,
-    "tags": ["tag1", "tag2"],
-    "updated_at": "2025-11-25T00:58:17.495Z",
-    "hash": "e68383599cb7c935fe150b78fea2404b15e38a2124a23c05714aa2daee1c457c"
-  }
+    "coming-soon-ml-project": {
+        "title": "Machine Learning Project Walkthrough",
+        "summary": "An in-depth walkthrough of building a machine learning model from data collection to deployment. Coming soon!",
+        "url": "https://example.com/ml-project",
+        "created_at": "2024-04-01T12:00:00Z",
+        "updated_at": "2024-04-01T12:00:00Z",
+        "tags": [
+            "machine-learning",
+            "data-science",
+            "python"
+        ],
+        "draft": true
+    },
+    "api-design-principles": {
+        "title": "RESTful API Design Principles",
+        "summary": "Best practices for designing clean, scalable, and maintainable REST APIs with real-world examples.",
+        "url": "https://example.com/api-design",
+        "created_at": "2024-03-15T14:00:00Z",
+        "updated_at": "2024-03-18T09:30:00Z",
+        "tags": [
+            "api",
+            "backend",
+            "web-development",
+            "architecture"
+        ],
+        "draft": false
+    },
+    "getting-started-with-docker": {
+        "title": "Getting Started with Docker",
+        "summary": "A beginner-friendly introduction to Docker containers, images, and docker-compose for development workflows.",
+        "url": "https://example.com/docker-tutorial",
+        "created_at": "2024-03-05T08:00:00Z",
+        "updated_at": "2024-03-08T13:20:00Z",
+        "tags": [
+            "docker",
+            "devops",
+            "containers",
+            "tutorial"
+        ],
+        "draft": false
+    },
+    "typescript-best-practices": {
+        "title": "TypeScript Best Practices",
+        "summary": "Essential TypeScript patterns and practices for writing maintainable and type-safe code in large applications.",
+        "url": "https://example.com/typescript-best-practices",
+        "created_at": "2024-02-10T11:20:00Z",
+        "updated_at": "2024-02-12T10:15:00Z",
+        "tags": [
+            "typescript",
+            "programming",
+            "software-engineering"
+        ],
+        "draft": false
+    },
+    "modern-css-techniques": {
+        "title": "Modern CSS Techniques for 2024",
+        "summary": "Exploring the latest CSS features including container queries, grid improvements, and new layout techniques.",
+        "url": "https://example.com/modern-css-techniques",
+        "created_at": "2024-02-01T09:00:00Z",
+        "updated_at": "2024-02-05T16:45:00Z",
+        "tags": [
+            "css",
+            "web-design",
+            "frontend"
+        ],
+        "draft": false
+    },
+    "understanding-react-hooks": {
+        "title": "Understanding React Hooks",
+        "summary": "A comprehensive guide to React Hooks, exploring useState, useEffect, and custom hooks with practical examples.",
+        "url": "https://example.com/react-hooks-guide",
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-20T14:30:00Z",
+        "tags": [
+            "react",
+            "javascript",
+            "frontend",
+            "web-development"
+        ],
+        "draft": false
+    }
 }

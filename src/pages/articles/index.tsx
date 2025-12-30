@@ -13,12 +13,17 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { usePageTitle } from "@/hooks/use-pagetitle";
 import ArticlesData from "@/data/generated/articles.json";
+import type { ArticleProps } from "@/types/article";
 
 const validSorts = ["updated", "created"] as const;
 type SortByType = (typeof validSorts)[number];
 
+type ArticlesDataType = Record<string, ArticleProps>;
+
+const typedArticlesData = ArticlesData as ArticlesDataType;
+
 const allTags = Array.from(
-  new Set(Object.values(ArticlesData).flatMap((article) => article.tags ?? [])),
+  new Set(Object.values(typedArticlesData).flatMap((article) => article.tags ?? [])),
 ).sort();
 
 export default function ArticlesPage() {
@@ -47,18 +52,18 @@ export default function ArticlesPage() {
   };
 
   const filteredArticles = (
-    Object.keys(ArticlesData) as (keyof typeof ArticlesData)[]
+    Object.keys(typedArticlesData) as (keyof ArticlesDataType)[]
   )
     .filter((article_name) => {
-      const article = ArticlesData[article_name];
+      const article = typedArticlesData[article_name];
       if (article.draft === true) return false;
-      const tags = (article.tags ?? []) as string[];
+      const tags = article.tags ?? [];
       const matchesTag = tagFilter === "all" || tags.includes(tagFilter);
       return matchesTag;
     })
     .sort((a, b) => {
-      const aData = ArticlesData[a];
-      const bData = ArticlesData[b];
+      const aData = typedArticlesData[a];
+      const bData = typedArticlesData[b];
 
       if (sortBy === "created") {
         return (
@@ -167,26 +172,44 @@ function ArticleCard({
   articleName,
   setTagFilter,
 }: {
-  articleName: keyof typeof ArticlesData;
+  articleName: keyof ArticlesDataType;
   setTagFilter: (val: string) => void;
 }) {
-  const article = ArticlesData[articleName];
+  const article = typedArticlesData[articleName];
+  const hasExternalUrl = article.url && typeof article.url === "string";
 
   return (
     <Card className="rounded-md overflow-hidden py-4 px-4 sm:px-8">
       <div className="flex flex-col gap-2">
-        <Button
-          asChild
-          variant="link"
-          className="p-0 h-7 text-base font-semibold text-left justify-start"
-        >
-          <Link
-            to={`/articles/${articleName}`}
-            aria-label={`Read full article: ${article.title}`}
+        {hasExternalUrl ? (
+          <Button
+            asChild
+            variant="link"
+            className="p-0 h-7 text-base font-semibold text-left justify-start"
           >
-            {article.title}
-          </Link>
-        </Button>
+            <a
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Read full article: ${article.title}`}
+            >
+              {article.title}
+            </a>
+          </Button>
+        ) : (
+          <Button
+            asChild
+            variant="link"
+            className="p-0 h-7 text-base font-semibold text-left justify-start"
+          >
+            <Link
+              to={`/articles/${articleName}`}
+              aria-label={`Read full article: ${article.title}`}
+            >
+              {article.title}
+            </Link>
+          </Button>
+        )}
 
         <p className="text-sm text-muted-foreground line-clamp-3">
           {article.summary || "No summary available."}
@@ -215,18 +238,35 @@ function ArticleCard({
               <> • Updated {formatDate(article.updated_at)}</>
             )}
           </span>
-          <Button
-            asChild
-            variant="link"
-            className="p-0 text-primary underline text-sm h-7.5"
-          >
-            <Link
-              to={`/articles/${articleName}`}
-              aria-label={`Read full article: ${article.title}`}
+          {hasExternalUrl ? (
+            <Button
+              asChild
+              variant="link"
+              className="p-0 text-primary underline text-sm h-7.5"
             >
-              Read More →
-            </Link>
-          </Button>
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Read full article: ${article.title}`}
+              >
+                Read More →
+              </a>
+            </Button>
+          ) : (
+            <Button
+              asChild
+              variant="link"
+              className="p-0 text-primary underline text-sm h-7.5"
+            >
+              <Link
+                to={`/articles/${articleName}`}
+                aria-label={`Read full article: ${article.title}`}
+              >
+                Read More →
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
     </Card>
