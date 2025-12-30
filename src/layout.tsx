@@ -6,7 +6,6 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 
 export default function Layout() {
@@ -22,16 +21,7 @@ export default function Layout() {
 
         {/* I would really appreciate it if you could keep the footer as it is to preserve attribution. Thank you! */}
         <footer className="text-sm w-full text-center border-t py-4">
-          Created by
-          <Button asChild variant="link" className="p-0 ml-1">
-            <a
-              href="https://github.com/pm25/natasharadika"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              natasharadika Template
-            </a>
-          </Button>
+          Last updated: 2025-12-30
         </footer>
 
         <Toaster />

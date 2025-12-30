@@ -21,7 +21,7 @@ export const homepage = {
       enabled: true
     },
     {
-      name: `Talks`,
+      name: `Awards`,
       variant: `default`,
       enabled: true
     },

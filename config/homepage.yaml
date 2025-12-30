@@ -24,7 +24,7 @@ homepage:
       variant: default
       enabled: true
 
-    - name: Talks
+    - name: Awards
       variant: default # default | card
       enabled: true
 

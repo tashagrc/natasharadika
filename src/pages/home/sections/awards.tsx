@@ -5,17 +5,17 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { talks } from "@/data/talks";
+import { awards } from "@/data/awards";
 
-interface TalksSectionProps {
+interface AwardsSectionProps {
   variant?: string;
 }
 
-const TITLE = "Presentations / Talks";
+const TITLE = "Awards";
 
-export default function TalksSection({
+export default function AwardsSection({
   variant = "default",
-}: TalksSectionProps) {
+}: AwardsSectionProps) {
   if (variant === "card") {
     return (
       <Card className="rounded-md md:px-2">
@@ -26,7 +26,7 @@ export default function TalksSection({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <TalksContent />
+          <AwardsContent />
         </CardContent>
       </Card>
     );
@@ -38,20 +38,20 @@ export default function TalksSection({
         <MdCoPresent />
         {TITLE}
       </div>
-      <TalksContent />
+      <AwardsContent />
     </div>
   );
 }
 
-function TalksContent() {
+function AwardsContent() {
   const [openPreview, setOpenPreview] = useState<string | null>(null);
 
   const togglePreview = (key: string) => {
     setOpenPreview((prev) => (prev === key ? null : key));
   };
 
-  // group talks by category
-  const groupedTalks = talks.reduce<Record<string, typeof talks>>(
+  // group awards by category
+  const groupedAwards = awards.reduce<Record<string, typeof awards>>(
     (acc, item) => {
       const cat = item.category || "Other";
       if (!acc[cat]) acc[cat] = [];
@@ -63,7 +63,7 @@ function TalksContent() {
 
   return (
     <div className="space-y-4">
-      {Object.entries(groupedTalks).map(([category, items]) => (
+      {Object.entries(groupedAwards).map(([category, items]) => (
         <div key={category}>
           <div className="text-sm text-muted-foreground font-medium mb-1">
             {category}
@@ -163,3 +163,4 @@ function TalksContent() {
     </div>
   );
 }
+

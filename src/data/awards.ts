@@ -1,4 +1,4 @@
-export const talks = [
+export const awards = [
   {
     category: `Misc`,
     title: `[Your Talk Title Here]`,

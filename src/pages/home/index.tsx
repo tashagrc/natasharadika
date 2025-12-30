@@ -3,7 +3,7 @@ import { usePageTitle } from "@/hooks/use-pagetitle";
 import IntroductionSection from "./sections/introduction";
 import ExperienceSection from "./sections/experience";
 import ProjectsSection from "./sections/projects";
-import TalksSection from "./sections/talks";
+import AwardsSection from "./sections/awards";
 import ServicesSection from "./sections/services";
 import SkillsSection from "./sections/skills";
 
@@ -17,7 +17,7 @@ const sectionComponents: Record<string, React.ComponentType<SectionProps>> = {
   Introduction: IntroductionSection,
   Experience: ExperienceSection,
   Projects: ProjectsSection,
-  Talks: TalksSection,
+  Awards: AwardsSection,
   Services: ServicesSection,
   Skills: SkillsSection,
 };

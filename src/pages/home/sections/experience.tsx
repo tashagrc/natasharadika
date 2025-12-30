@@ -23,7 +23,11 @@ export default function ExperienceSection() {
                 <img
                   src={edu.logo}
                   alt={`${edu.school} logo`}
-                  className="w-12 h-12 object-contain rounded"
+                  className={`w-12 h-12 object-contain rounded ${
+                    edu.logo.includes("logoBINUS")
+                      ? "dark:brightness-0 dark:invert"
+                      : ""
+                  }`}
                   loading="lazy"
                 />
                 <div>
@@ -53,7 +57,11 @@ export default function ExperienceSection() {
                 <img
                   src={job.logo}
                   alt={`${job.company} logo`}
-                  className="w-12 h-12 object-contain rounded"
+                  className={`w-12 h-12 object-contain rounded ${
+                    job.logo.includes("logoGrab") || job.logo.includes("logoApple")
+                      ? "dark:brightness-0 dark:invert"
+                      : ""
+                  }`}
                   loading="lazy"
                 />
                 <div>

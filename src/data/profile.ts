@@ -1,40 +1,33 @@
-import { FaLinkedin, FaGoogleScholar, FaRegIdBadge, FaGithub, FaSquareFacebook } from "react-icons/fa6";
+import { FaLinkedin, FaGithub, FaMedium } from "react-icons/fa6";
 
 export const profile = {
-  name: `[Your Name]`,
-  headline: `Student @ [Your University]`,
-  email: `your-email@gmail.com`,
-  location: null,
-  profileImage: `https://github.com/pm25.png`,
+  name: `Natasha Radika`,
+  headline: `iOS Engineer at Grab`,
+  email: `natasha.radika@gmail.com`,
+  location: `Jakarta, Indonesia`,
+  profileImage: `/natasharadika/images/profile.jpg`,
   links: [
     {
       name: `LinkedIn`,
-      url: `https://www.linkedin.com/in/[your-linkedin]`,
+      url: `https://www.linkedin.com/in/natasharadika/`,
       icon: FaLinkedin
     },
     {
-      name: `Google Scholar`,
-      url: `https://scholar.google.com/citations?user=[your-id]`,
-      icon: FaGoogleScholar
-    },
-    {
-      name: `Résumé`,
-      url: `/natasharadika/pdf/sample-resume.pdf`,
-      icon: FaRegIdBadge
-    },
-    {
       name: `Github`,
-      url: `https://github.com/[your-github]`,
+      url: `https://github.com/tashagrc`,
       icon: FaGithub
     },
     {
-      name: `Facebook`,
-      url: `https://www.facebook.com/[your-facebook]`,
-      icon: FaSquareFacebook
+      name: `Medium`,
+      url: `https://medium.com/@tashagrc`,
+      icon: FaMedium
     }
   ],
-  biography: `Hi! I'm <strong>[Your Name]</strong>, a <em>[Your Title]</em> passionate about <em>[field or topic]</em>. Currently, I work as <em>[current role]</em> at <em>[organization]</em>, where I <em>[briefly describe your work or mission]</em>. 
-With a background in <em>[academic or professional background]</em>, I've developed strong interests in <em>[key interests or specialties]</em> and have contributed to projects like <i>[example project]</i> and <i>[another example]</i>, all focused on <em>[broader goal or impact]</em>.
+  biography: `Hi! I'm <strong>Natasha</strong>, an <em>iOS engineer</em> who loves building <em>thoughtful and useful products</em>. 
+Currently, I work at <em>Grab</em> on the <em>Platform team</em>, where I <em>build internal tools to improve developer experience</em>.
+
+With a background in <em>Computer Science from BINUS</em> and learning through the <em>Apple Developer Academy</em>, I've worked on projects like <i>Mimicri</i> (launched on the App Store with 300+ users in its first week) and <i>Aura</i>, which won <em>GEMASTIK 17</em> and the <em>Microsoft Accessibility Hackathon</em>.
 <div class="my-2"></div>
-Outside of work, I enjoy <em>[hobbies or personal interests]</em>, which inspire creativity and keep me energized. Thanks for visiting! Feel free to <a href="mailto:[your-email@example.com]" target="_blank" rel="noopener noreferrer">reach out</a> to connect.`
+Outside of work, I enjoy <em>painting and reading</em>, which help me stay creative and refreshed. 
+Feel free to <a href="mailto:natasha.radika@gmail.com" target="_blank" rel="noopener noreferrer">reach out</a> to connect.`
 };
