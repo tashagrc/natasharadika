@@ -5,7 +5,7 @@
 
 site:
   name: "tashagrc"
-  repoUrl: "https://github.com/tashagrc/natasharadika"
+  repoUrl: "https://github.com/tashagrc/tashagrc.github.io"
   description: "Natasha's Portfolio, iOS Engineer"
   author: "Natasha Radika"
   base: "/"  # Set to "/" for user page (tashagrc.github.io), or "/natasharadika/" for project page
