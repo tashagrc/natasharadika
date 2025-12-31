@@ -1,5 +1,5 @@
 import { useSearchParams, useNavigate } from "react-router";
-import { FaWrench, FaGithub, FaGlobe, FaRegStar } from "react-icons/fa6";
+import { FaWrench, FaGithub, FaGlobe } from "react-icons/fa6";
 
 import {
   Select,
@@ -15,7 +15,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePageTitle } from "@/hooks/use-pagetitle";
 import { repos } from "@/data/repos";
 
-const validSorts = ["stars", "updated", "created"] as const;
+const validSorts = ["updated", "created"] as const;
 type SortByType = (typeof validSorts)[number];
 
 const allTopics = Array.from(
@@ -60,9 +60,7 @@ export default function ProjectsPage() {
       const aData = repos[a];
       const bData = repos[b];
 
-      if (sortBy === "stars") {
-        return (bData.stargazers_count ?? 0) - (aData.stargazers_count ?? 0);
-      } else if (sortBy === "created") {
+      if (sortBy === "created") {
         return (
           new Date(bData.created_at).getTime() -
           new Date(aData.created_at).getTime()
@@ -162,7 +160,6 @@ function SortSelector({
         <SelectContent>
           <SelectItem value="updated">🕒 Last Updated</SelectItem>
           <SelectItem value="created">📅 Created Time</SelectItem>
-          <SelectItem value="stars">⭐ Star Count</SelectItem>
         </SelectContent>
       </Select>
     </div>
@@ -185,7 +182,6 @@ function ProjectCard({
     description,
     topics = [],
     language,
-    stargazers_count,
     homepage,
   } = repo;
 
@@ -266,18 +262,6 @@ function ProjectCard({
           <div className="flex flex-row items-center justify-between text-muted-foreground pt-2">
             <div className="flex items-center gap-2 text-sm">
               <p>Language: {language || "Unknown"}</p>
-              {stargazers_count !== null && (
-                <a
-                  href={`${html_url}/stargazers`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Stargazers"
-                  className="flex items-center gap-1 text-yellow-600 hover:text-yellow-500"
-                >
-                  <FaRegStar className="w-4 h-4" />
-                  <span>{stargazers_count}</span>
-                </a>
-              )}
             </div>
 
             <div className="flex items-center gap-2">

@@ -3,6 +3,6 @@
   "repoUrl": "https://github.com/tashagrc/tashagrc.github.io",
   "description": "Natasha's Portfolio, iOS Engineer",
   "author": "Natasha Radika",
-  "repoName": "tashagrc.github.io",
-  "base": "/"
+  "base": "/",
+  "repoName": "tashagrc.github.io"
 }

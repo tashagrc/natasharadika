@@ -3,7 +3,6 @@ import {
   FaWrench,
   FaGithub,
   FaGlobe,
-  FaRegStar,
   FaArrowRight,
 } from "react-icons/fa6";
 
@@ -20,11 +19,21 @@ export default function ProjectsSection() {
         Projects
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {featuredReposArray.map((repoData, index) => (
-          <ProjectCard key={index} repoData={repoData} />
-        ))}
-      </div>
+      {featuredReposArray.length === 0 ? (
+        <div className="text-center py-8 text-muted-foreground">
+          <p>No featured projects found.</p>
+          <p className="text-sm mt-2">
+            Make sure your projects are marked as <code>featured: true</code> in{" "}
+            <code>config/projects.yaml</code> and run <code>npm run fetch:repos</code> to update the data.
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          {featuredReposArray.map((repoData, index) => (
+            <ProjectCard key={index} repoData={repoData} />
+          ))}
+        </div>
+      )}
 
       <div className="relative w-full">
         <div className="absolute right-0">
@@ -139,18 +148,6 @@ function ProjectCard({
               <p className="text-sm">
                 Language: {repoData.language || "Unknown"}
               </p>
-              {repoData.stargazers_count !== null && (
-                <a
-                  href={`${repoData.html_url}/stargazers`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Stargazers"
-                  className="flex items-center gap-1 text-sm text-yellow-600 hover:text-yellow-500"
-                >
-                  <FaRegStar className="w-4 h-4" />
-                  <span>{repoData.stargazers_count}</span>
-                </a>
-              )}
             </div>
 
             <div className="flex items-center gap-2">

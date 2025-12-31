@@ -2,7 +2,6 @@
   "example-project": {
     "name": "example-project",
     "description": "A sample repository used for demonstration purposes.",
-    "stargazers_count": 0,
     "topics": ["example", "repository"],
     "language": null,
     "homepage": "",
@@ -17,7 +16,6 @@
   "natasharadika": {
     "name": "natasharadika",
     "description": "✨ natasharadika - A modern and clean template for creating a personal website",
-    "stargazers_count": 5,
     "topics": [
       "personal-website-template",
       "react",
@@ -41,7 +39,6 @@
   "Semi-Supervised-Regression": {
     "name": "Semi-Supervised-Regression",
     "description": "🎋 NeurIPS 2024: Official repository for the paper 'RankUp: Boosting Semi-Supervised Regression with an Auxiliary Ranking Classifier'",
-    "stargazers_count": 14,
     "topics": ["pytorch", "regression", "semi-supervised-learning"],
     "language": "Python",
     "homepage": "",
