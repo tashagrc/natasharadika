@@ -64,8 +64,7 @@ export default function SkillsSection() {
           <Separator className="my-4" />
 
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Filter skills by category to explore my technical and research
-            background.
+            Filter skills by category to explore my technical background.
           </p>
         </div>
 
