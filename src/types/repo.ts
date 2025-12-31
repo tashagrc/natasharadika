@@ -19,5 +19,4 @@ export interface RepoProps {
   displayName: string | null;
   previewImage: string | null;
   featured: boolean;
-  [key: string]: any; // Allow additional custom fields
 }
