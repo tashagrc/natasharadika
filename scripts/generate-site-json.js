@@ -50,7 +50,10 @@ if (site.repoUrl) {
       .pop() || "";
 
   site.repoName = repoName;
-  site.base = repoName.endsWith(".github.io") ? "/" : `/${repoName}/`;
+  // Only auto-generate base if not manually specified in YAML
+  if (site.base === undefined) {
+    site.base = repoName.endsWith(".github.io") ? "/" : `/${repoName}/`;
+  }
 } else {
   console.warn(
     "⚠️ No repoUrl found in site.yaml. Skipping repoName/base generation.",
