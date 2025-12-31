@@ -3,7 +3,6 @@ export interface ArticleProps {
   summary: string;
   url: string;
   created_at: string;
-  updated_at: string;
   tags: string[];
   draft: boolean;
 }

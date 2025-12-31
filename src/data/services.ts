@@ -21,7 +21,7 @@ export const services = [
     organization: `BINUS University`,
     date: `2025`,
     link: null,
-    image: `/images/talkBINUS.jpg`
+    image: `/images/talkBinus.jpg`
   },
   {
     category: `Publications`,
@@ -37,6 +37,6 @@ export const services = [
     organization: `BINUS University`,
     date: `2022 - 2023`,
     link: null,
-    image: `/images/labBINUS.jpeg`
+    image: `/images/labBinus.jpeg`
   }
 ];

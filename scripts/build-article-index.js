@@ -28,29 +28,37 @@ if (!data?.articles?.items) {
 console.log(`✅ Loaded YAML: ${inputFile}`);
 
 // ======================================
-// 3. Convert items array to articles object keyed by slug
+// 3. Convert items array to articles object keyed by generated slug from title
 // ======================================
 const articles = {};
 
-data.articles.items.forEach((item) => {
-  if (!item.slug) {
-    console.warn(`⚠️ Skipping article without slug:`, item);
+// Helper function to generate a slug from title
+function generateSlug(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+data.articles.items.forEach((item, index) => {
+  if (!item.title) {
+    console.warn(`⚠️ Skipping article without title at index ${index}`);
     return;
   }
 
   if (!item.url) {
-    console.warn(`⚠️ Skipping article without url: ${item.slug}`);
+    console.warn(`⚠️ Skipping article without url: ${item.title}`);
     return;
   }
 
   const now = new Date().toISOString();
+  const slug = generateSlug(item.title);
 
-  articles[item.slug] = {
+  articles[slug] = {
     title: item.title || "Untitled",
     summary: item.summary || "",
     url: item.url,
     created_at: item.created_at || now,
-    updated_at: item.updated_at || item.created_at || now,
     tags: item.tags || [],
     draft: item.draft || false,
   };

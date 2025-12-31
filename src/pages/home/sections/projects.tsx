@@ -24,7 +24,7 @@ export default function ProjectsSection() {
           <p>No featured projects found.</p>
           <p className="text-sm mt-2">
             Make sure your projects are marked as <code>featured: true</code> in{" "}
-            <code>config/projects.yaml</code> and run <code>npm run fetch:repos</code> to update the data.
+            <code>config/projects.yaml</code> and run <code>npm run generate:projects-json</code> to update the data.
           </p>
         </div>
       ) : (
@@ -71,15 +71,40 @@ function ProjectCard({
     );
   }
 
+  const imageLink = repoData.html_url || repoData.homepage || null;
+
   return (
     <Card className="rounded-md overflow-hidden gap-0 py-0 w-full flex flex-col h-full">
       <div className="flex flex-col flex-grow">
-        <a
-          href={repoData.html_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-        >
+        {imageLink ? (
+          <a
+            href={imageLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <div className="aspect-3/2 w-full overflow-hidden">
+              {repoData.previewImage ? (
+                <img
+                  src={repoData.previewImage}
+                  alt={repoData.name || "Project image"}
+                  className="w-full h-full object-cover"
+                  style={{ overflowClipMargin: "unset" }}
+                  loading="lazy"
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center p-4 w-full h-full bg-muted">
+                  <span className="text-lg font-semibold opacity-80 text-center">
+                    {repoData.name || "Unnamed Project"}
+                  </span>
+                  <span className="text-sm text-muted-foreground text-center">
+                    Image not available
+                  </span>
+                </div>
+              )}
+            </div>
+          </a>
+        ) : (
           <div className="aspect-3/2 w-full overflow-hidden">
             {repoData.previewImage ? (
               <img
@@ -100,7 +125,7 @@ function ProjectCard({
               </div>
             )}
           </div>
-        </a>
+        )}
 
         <div className="w-full border-t" />
 

@@ -9,7 +9,6 @@ import { useGlobalMeta } from "./hooks/use-global-meta";
 const HomePage = loadLazy(() => import("@/pages/home"));
 const ProjectsPage = loadLazy(() => import("@/pages/projects"));
 const ArticlesPage = loadLazy(() => import("@/pages/articles"));
-const ArticlePage = loadLazy(() => import("@/pages/articles/page"));
 const NotFoundPage = loadLazy(() => import("@/pages/notfound"));
 
 export default function App() {
@@ -24,7 +23,6 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="projects" element={<ProjectsPage />} />
             <Route path="articles" element={<ArticlesPage />} />
-            <Route path="/articles/:slug" element={<ArticlePage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

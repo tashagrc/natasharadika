@@ -1,5 +1,5 @@
 import { FaNewspaper } from "react-icons/fa6";
-import { useSearchParams, useNavigate, Link } from "react-router";
+import { useSearchParams, useNavigate } from "react-router";
 
 import {
   Select,
@@ -15,7 +15,7 @@ import { usePageTitle } from "@/hooks/use-pagetitle";
 import ArticlesData from "@/data/generated/articles.json";
 import type { ArticleProps } from "@/types/article";
 
-const validSorts = ["updated", "created"] as const;
+const validSorts = ["created"] as const;
 type SortByType = (typeof validSorts)[number];
 
 type ArticlesDataType = Record<string, ArticleProps>;
@@ -36,7 +36,7 @@ export default function ArticlesPage() {
   const sort = searchParams.get("sort");
 
   const tagFilter: string = tag && allTags.includes(tag) ? tag : "all";
-  const sortBy: SortByType = validSorts.find((s) => s === sort) ?? "updated";
+  const sortBy: SortByType = validSorts.find((s) => s === sort) ?? "created";
 
   const updateTagFilter = (newTag: string) => {
     const params = new URLSearchParams(searchParams);
@@ -65,17 +65,10 @@ export default function ArticlesPage() {
       const aData = typedArticlesData[a];
       const bData = typedArticlesData[b];
 
-      if (sortBy === "created") {
-        return (
-          new Date(bData.created_at).getTime() -
-          new Date(aData.created_at).getTime()
-        );
-      } else {
-        return (
-          new Date(bData.updated_at).getTime() -
-          new Date(aData.updated_at).getTime()
-        );
-      }
+      return (
+        new Date(bData.created_at).getTime() -
+        new Date(aData.created_at).getTime()
+      );
     });
 
   return (
@@ -160,7 +153,6 @@ function SortSelector({
           <SelectValue placeholder="Sort by" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="updated">🕒 Last Updated</SelectItem>
           <SelectItem value="created">📅 Created Time</SelectItem>
         </SelectContent>
       </Select>
@@ -197,18 +189,7 @@ function ArticleCard({
             </a>
           </Button>
         ) : (
-          <Button
-            asChild
-            variant="link"
-            className="p-0 h-7 text-base font-semibold text-left justify-start"
-          >
-            <Link
-              to={`/articles/${articleName}`}
-              aria-label={`Read full article: ${article.title}`}
-            >
-              {article.title}
-            </Link>
-          </Button>
+          <span className="text-base font-semibold">{article.title}</span>
         )}
 
         <p className="text-sm text-muted-foreground line-clamp-3">
@@ -234,9 +215,6 @@ function ArticleCard({
         <div className="flex justify-between items-center text-sm text-muted-foreground mt-auto pt-2">
           <span>
             Published {formatDate(article.created_at)}
-            {!isSameDate(article.created_at, article.updated_at) && (
-              <> • Updated {formatDate(article.updated_at)}</>
-            )}
           </span>
           {hasExternalUrl ? (
             <Button
@@ -253,20 +231,7 @@ function ArticleCard({
                 Read More →
               </a>
             </Button>
-          ) : (
-            <Button
-              asChild
-              variant="link"
-              className="p-0 text-primary underline text-sm h-7.5"
-            >
-              <Link
-                to={`/articles/${articleName}`}
-                aria-label={`Read full article: ${article.title}`}
-              >
-                Read More →
-              </Link>
-            </Button>
-          )}
+          ) : null}
         </div>
       </div>
     </Card>
@@ -281,12 +246,3 @@ function formatDate(dateStr: string) {
   });
 }
 
-function isSameDate(date1: string, date2: string): boolean {
-  const d1 = new Date(date1);
-  const d2 = new Date(date2);
-  return (
-    d1.getFullYear() === d2.getFullYear() &&
-    d1.getMonth() === d2.getMonth() &&
-    d1.getDate() === d2.getDate()
-  );
-}

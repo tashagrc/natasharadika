@@ -3,63 +3,15 @@
 #
 # Articles redirect to external URLs when clicked.
 #
-# ✔ The `slug` field is used as the URL identifier (e.g., /articles/my-article)
 # ✔ The `url` field is the external URL to redirect to
 # ✔ Use the `draft` field to hide unfinished articles (draft: true)
 # =====================================================
 
 articles:
   items:
-    - slug: "understanding-react-hooks"
-      title: "Understanding React Hooks"
+    - title: "Understanding React Hooks"
       summary: "A comprehensive guide to React Hooks, exploring useState, useEffect, and custom hooks with practical examples."
       url: "https://example.com/react-hooks-guide"
       created_at: "2024-01-15T10:00:00Z"
-      updated_at: "2024-01-20T14:30:00Z"
       tags: ["react", "javascript", "frontend", "web-development"]
       draft: false
-
-    - slug: "modern-css-techniques"
-      title: "Modern CSS Techniques for 2024"
-      summary: "Exploring the latest CSS features including container queries, grid improvements, and new layout techniques."
-      url: "https://example.com/modern-css-techniques"
-      created_at: "2024-02-01T09:00:00Z"
-      updated_at: "2024-02-05T16:45:00Z"
-      tags: ["css", "web-design", "frontend"]
-      draft: false
-
-    - slug: "typescript-best-practices"
-      title: "TypeScript Best Practices"
-      summary: "Essential TypeScript patterns and practices for writing maintainable and type-safe code in large applications."
-      url: "https://example.com/typescript-best-practices"
-      created_at: "2024-02-10T11:20:00Z"
-      updated_at: "2024-02-12T10:15:00Z"
-      tags: ["typescript", "programming", "software-engineering"]
-      draft: false
-
-    - slug: "getting-started-with-docker"
-      title: "Getting Started with Docker"
-      summary: "A beginner-friendly introduction to Docker containers, images, and docker-compose for development workflows."
-      url: "https://example.com/docker-tutorial"
-      created_at: "2024-03-05T08:00:00Z"
-      updated_at: "2024-03-08T13:20:00Z"
-      tags: ["docker", "devops", "containers", "tutorial"]
-      draft: false
-
-    - slug: "api-design-principles"
-      title: "RESTful API Design Principles"
-      summary: "Best practices for designing clean, scalable, and maintainable REST APIs with real-world examples."
-      url: "https://example.com/api-design"
-      created_at: "2024-03-15T14:00:00Z"
-      updated_at: "2024-03-18T09:30:00Z"
-      tags: ["api", "backend", "web-development", "architecture"]
-      draft: false
-
-    - slug: "coming-soon-ml-project"
-      title: "Machine Learning Project Walkthrough"
-      summary: "An in-depth walkthrough of building a machine learning model from data collection to deployment. Coming soon!"
-      url: "https://example.com/ml-project"
-      created_at: "2024-04-01T12:00:00Z"
-      updated_at: "2024-04-01T12:00:00Z"
-      tags: ["machine-learning", "data-science", "python"]
-      draft: true

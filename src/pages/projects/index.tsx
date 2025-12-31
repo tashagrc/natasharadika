@@ -61,15 +61,17 @@ export default function ProjectsPage() {
       const bData = repos[b];
 
       if (sortBy === "created") {
-        return (
-          new Date(bData.created_at).getTime() -
-          new Date(aData.created_at).getTime()
-        );
+        const aDate = aData.created_at ? new Date(aData.created_at).getTime() : 0;
+        const bDate = bData.created_at ? new Date(bData.created_at).getTime() : 0;
+        return bDate - aDate;
       } else {
-        return (
-          new Date(bData.pushed_at).getTime() -
-          new Date(aData.pushed_at).getTime()
-        );
+        const aDate = aData.pushed_at || aData.updated_at 
+          ? new Date(aData.pushed_at || aData.updated_at || "").getTime() 
+          : 0;
+        const bDate = bData.pushed_at || bData.updated_at 
+          ? new Date(bData.pushed_at || bData.updated_at || "").getTime() 
+          : 0;
+        return bDate - aDate;
       }
     });
 
@@ -185,15 +187,39 @@ function ProjectCard({
     homepage,
   } = repo;
 
+  const imageLink = html_url || homepage || null;
+
   return (
     <Card className="rounded-md overflow-hidden gap-0 py-0 w-full">
       <div className="flex flex-col lg:flex-row">
-        <a
-          href={html_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-        >
+        {imageLink ? (
+          <a
+            href={imageLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <div className="aspect-3/2 w-full max-h-72 lg:max-w-75 lg:h-50 overflow-hidden">
+              {previewImage ? (
+                <img
+                  src={previewImage}
+                  alt={name || "Project image"}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center p-4 w-full h-full bg-muted">
+                  <span className="text-lg font-semibold opacity-80 text-center">
+                    {name || "Unnamed Project"}
+                  </span>
+                  <span className="text-sm text-muted-foreground text-center">
+                    Image not available
+                  </span>
+                </div>
+              )}
+            </div>
+          </a>
+        ) : (
           <div className="aspect-3/2 w-full max-h-72 lg:max-w-75 lg:h-50 overflow-hidden">
             {previewImage ? (
               <img
@@ -213,7 +239,7 @@ function ProjectCard({
               </div>
             )}
           </div>
-        </a>
+        )}
 
         <div className="w-full border-t block lg:hidden" />
         <div className="h-full border-l hidden lg:block" />
