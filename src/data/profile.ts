@@ -24,7 +24,7 @@ export const profile = {
     }
   ],
   biography: `Hi! I'm <strong>Natasha</strong>, an <em>iOS engineer</em> who loves building <em>thoughtful and useful products</em>. 
-Currently, I work at <em>Grab</em> on the <em>Platform team</em>, where I <em>build internal tools to improve developer experience</em>.
+Currently, I work at <em>Grab</em> on the <em>Core/Platform team</em>.
 
 With a background in <em>Computer Science from BINUS</em> and learning through the <em>Apple Developer Academy</em>, I've worked on projects like <i>Mimicri</i> (launched on the App Store with 300+ users in its first week) and <i>Aura</i>, which won <em>GEMASTIK 17</em> and the <em>Microsoft Accessibility Hackathon</em>.
 <div class="my-2"></div>

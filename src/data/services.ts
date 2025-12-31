@@ -17,7 +17,7 @@ export const services = [
   },
   {
     category: `Volunteering`,
-    role: `Guest Speaker`,
+    role: `Guest Speaker - Hackathon Journey`,
     organization: `BINUS University`,
     date: `2025`,
     link: null,

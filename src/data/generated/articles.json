@@ -1,14 +1,44 @@
 {
-    "understanding-react-hooks": {
-        "title": "Understanding React Hooks",
-        "summary": "A comprehensive guide to React Hooks, exploring useState, useEffect, and custom hooks with practical examples.",
-        "url": "https://example.com/react-hooks-guide",
-        "created_at": "2024-01-15T10:00:00Z",
+    "understanding-how-data-flows-through-viper-ios": {
+        "title": "Understanding How Data Flows Through VIPER — iOS",
+        "summary": "At its core, VIPER is just a way to organize how data flows in your app.",
+        "url": "https://medium.com/@tashagrc/understanding-how-data-flows-through-viper-ios-8b633b8ba269",
+        "created_at": "2025-07-14T10:00:00Z",
         "tags": [
-            "react",
-            "javascript",
-            "frontend",
-            "web-development"
+            "uikit",
+            "architecture"
+        ],
+        "draft": false
+    },
+    "stay-dry-wherever-you-go-with-weatherway": {
+        "title": "Stay Dry Wherever You Go with WeatherWay",
+        "summary": "WeatherWay is a weather app built using SwiftUI, WeatherKit, and MapKit, designed to provide weather alerts for your route.",
+        "url": "https://medium.com/@tashagrc/stay-dry-wherever-you-go-with-weatherway-68294c20febe",
+        "created_at": "2024-07-28T10:00:00Z",
+        "tags": [
+            "swiftui",
+            "project"
+        ],
+        "draft": false
+    },
+    "trible-the-most-fun-workout-you-ll-ever-have": {
+        "title": "Trible: The Most Fun Workout You'll Ever Have",
+        "summary": "Trible is an endless runner game where you jump in real life too, built using SpriteKit and CreateML.",
+        "url": "https://medium.com/@tashagrc/trible-an-endless-runner-game-with-spritekit-and-coreml-107c1676236b",
+        "created_at": "2024-07-07T10:00:00Z",
+        "tags": [
+            "swiftui",
+            "project"
+        ],
+        "draft": false
+    },
+    "breaking-barriers-venn-team-s-story-in-building-app-for-pediatrics-disability": {
+        "title": "Breaking Barriers: Venn Team's Story in Building App for Pediatrics-disability",
+        "summary": "Our hackathon journey.",
+        "url": "https://medium.com/generation-girl/breaking-barriers-venn-teams-story-in-building-app-for-pediatrics-disability-bf66dbb9bf94",
+        "created_at": "2023-13-13T10:00:00Z",
+        "tags": [
+            "project"
         ],
         "draft": false
     }

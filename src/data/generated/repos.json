@@ -1,15 +1,14 @@
 {
-  "example-project": {
-    "name": "example-project",
-    "id": "example-project",
-    "displayName": "Example Project",
+  "aura": {
+    "name": "aura",
+    "id": "aura",
+    "displayName": "Aura",
     "description": "A sample project for demonstration purposes.",
     "topics": [
-      "example",
-      "demo",
-      "web"
+      "cross-platform",
+      "hackathon"
     ],
-    "language": "TypeScript",
+    "language": "Dart, Flutter",
     "homepage": "https://example-project-demo.com",
     "html_url": "https://github.com/username/example-project",
     "links": [
@@ -18,24 +17,22 @@
         "url": "https://github.com/username/example-project"
       }
     ],
-    "created_at": "2024-01-15T00:00:00Z",
-    "updated_at": "2024-12-01T00:00:00Z",
-    "pushed_at": "2024-12-01T00:00:00Z",
+    "created_at": "2024-07-01T00:00:00Z",
+    "updated_at": "2024-12-31T00:00:00Z",
+    "pushed_at": "2024-12-31T00:00:00Z",
     "previewImage": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg",
     "featured": true
   },
-  "Semi-Supervised-Regression": {
-    "name": "Semi-Supervised-Regression",
-    "id": "Semi-Supervised-Regression",
-    "displayName": "Semi-Supervised Regression",
+  "mimicri": {
+    "name": "mimicri",
+    "id": "mimicri",
+    "displayName": "Mimicri",
     "description": "🎋 NeurIPS 2024: Official repository for the paper 'RankUp: Boosting Semi-Supervised Regression with an Auxiliary Ranking Classifier'",
     "topics": [
-      "pytorch",
-      "regression",
-      "semi-supervised-learning",
-      "machine-learning"
+      "ios",
+      "apple-academy"
     ],
-    "language": "Python",
+    "language": "Swift, UIKit",
     "homepage": null,
     "html_url": "https://github.com/pm25/Semi-Supervised-Regression",
     "links": [
@@ -50,19 +47,64 @@
     "previewImage": "https://pm25.github.io/research-figures/rankup/figures/rankup-illustration.png",
     "featured": true
   },
-  "SimplePlus-BeamerTheme": {
-    "name": "SimplePlus-BeamerTheme",
-    "id": "SimplePlus-BeamerTheme",
-    "displayName": "SimplePlus Beamer Theme",
+  "weather-way": {
+    "name": "weather-way",
+    "id": "weather-way",
+    "displayName": "WeatherWay",
     "description": "🍃 SimplePlus - A minimalist and clean LaTeX Beamer theme",
     "topics": [
-      "beamer-template",
-      "beamer-theme",
-      "latex",
-      "latex-template",
-      "presentation"
+      "ios",
+      "apple-academy"
     ],
-    "language": "TeX",
+    "language": "Swift, SwiftUI",
+    "homepage": null,
+    "html_url": "https://github.com/pm25/SimplePlus-BeamerTheme",
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/pm25/SimplePlus-BeamerTheme"
+      }
+    ],
+    "created_at": "2021-12-14T08:33:39Z",
+    "updated_at": "2025-11-26T16:09:45Z",
+    "pushed_at": "2025-11-26T16:09:45Z",
+    "previewImage": "https://raw.githubusercontent.com/pm25/simpleplus-beamerTheme/master/preview/slide-1.webp",
+    "featured": true
+  },
+  "unmasked": {
+    "name": "unmasked",
+    "id": "unmasked",
+    "displayName": "Unmasked",
+    "description": "🍃 SimplePlus - A minimalist and clean LaTeX Beamer theme",
+    "topics": [
+      "ios",
+      "apple-academy"
+    ],
+    "language": "Swift, SwiftUI",
+    "homepage": null,
+    "html_url": "https://github.com/pm25/SimplePlus-BeamerTheme",
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/pm25/SimplePlus-BeamerTheme"
+      }
+    ],
+    "created_at": "2021-12-14T08:33:39Z",
+    "updated_at": "2025-11-26T16:09:45Z",
+    "pushed_at": "2025-11-26T16:09:45Z",
+    "previewImage": "https://raw.githubusercontent.com/pm25/simpleplus-beamerTheme/master/preview/slide-1.webp",
+    "featured": true
+  },
+  "intone": {
+    "name": "intone",
+    "id": "intone",
+    "displayName": "Intone",
+    "description": "🍃 SimplePlus - A minimalist and clean LaTeX Beamer theme",
+    "topics": [
+      "ios",
+      "apple-academy"
+    ],
+    "language": "Swift, SwiftUI",
     "homepage": null,
     "html_url": "https://github.com/pm25/SimplePlus-BeamerTheme",
     "links": [
